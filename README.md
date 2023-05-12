@@ -2,6 +2,11 @@
 
 TextChunker is a Python class that takes in long text as input and divides it into shorter chunks no longer than a specified length. The purpose of this project is to provide a simple and useful tool for data processing tasks such as natural language processing and information extraction.
 
+## Install
+``` sh
+pip intsll text_chunker
+```
+
 ## Usage
 
 You can use the `TextChunker` class in your Python code as follows:
