@@ -27,13 +27,13 @@ The `chunk` method attempts to split paragraphs first while keeping chunk length
 
 There are also functions called `paragraphs` and `sentences` that divide the text into paragraphs and sentences, respectively.
 
-```
+``` python
 from text_chunker import paragraphs
 
 for p in paragraphs(text):
     print(p)
 ```
-```
+``` python
 from text_chunker import sentences
 
 for s in sentences(text):
