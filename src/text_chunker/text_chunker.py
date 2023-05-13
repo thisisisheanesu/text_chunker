@@ -68,12 +68,54 @@ class TextChunker():
 
 
 def paragraphs(text):
+    """
+    Generator function that splits the given text into paragraphs.
+
+    Parameters
+    ----------
+    text : str
+        The input text to be divided into paragraphs.
+
+    Yields
+    ------
+    str
+        A paragraph from the input text.
+
+    Example
+    -------
+    >>> text = "This is the first paragraph.\n\nThis is the second paragraph."
+    >>> for paragraph in paragraphs(text):
+    ...     print(paragraph)
+    This is the first paragraph.
+    This is the second paragraph.
+    """
     for paragraph in text.splitlines():
         if paragraph:
             yield paragraph
 
 
 def sentences(text):
+    """
+    Generator function that splits the given text into sentences.
+
+    Parameters
+    ----------
+    text : str
+        The input text to be divided into sentences.
+
+    Yields
+    ------
+    str
+        A sentence from the input text.
+
+    Example
+    -------
+    >>> text = "This is the first sentence. This is the second sentence."
+    >>> for sentence in sentences(text):
+    ...     print(sentence)
+    This is the first sentence.
+    This is the second sentence.
+    """
     for s in tokenize.sent_tokenize(text):
         if s:
             yield s
