@@ -1,12 +1,12 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling","nltk"]
 build-backend = "hatchling.build"
 
 [project]
 name = "text_chunker"
-version = "0.1.2"
+version = "0.2.1"
 authors = [
-  { name="RPAW Kim", email="rpawizardk@gmail.com" },
+  { name="rpawk", email="rpawizardk@gmail.com" },
 ]
 description = "A Python class that takes in long text as input and divides it into shorter chunks no longer than a specified length."
 readme = "README.md"

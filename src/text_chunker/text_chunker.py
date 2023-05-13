@@ -1,3 +1,8 @@
+from nltk import tokenize
+
+PUNCTUATION_MARKS = ('. ','? ','! ')
+
+
 class TextChunker():
     """
     A class for chunking long text into smaller chunks.
@@ -21,7 +26,6 @@ class TextChunker():
 
     def __init__(self, maxlen):
         self.maxlen = maxlen
-        self.punctuation_marks = ('. ','? ','! ')
 
     def chunk(self, text):
         """
@@ -50,7 +54,7 @@ class TextChunker():
             end = text[:self.maxlen].rfind('\n')
             # if a paragraph is longer than maxlen: split sentences
             if end == -1:
-                end = max([text[:self.maxlen].rfind(m) for m in self.punctuation_marks])
+                end = max([text[:self.maxlen].rfind(m) for m in PUNCTUATION_MARKS])
                 # if a sentence is longer than maxlen: split words
                 if end == -1:
                     end = text[:self.maxlen].rfind(' ')
@@ -61,6 +65,18 @@ class TextChunker():
             yield text[:end+1]
             text = text[end+1:]
         yield text
+
+
+def paragraphs(text):
+    for paragraph in text.splitlines():
+        if paragraph:
+            yield paragraph
+
+
+def sentences(text):
+    for s in tokenize.sent_tokenize(text):
+        if s:
+            yield s
 
 
 if __name__ == '__main__':

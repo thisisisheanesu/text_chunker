@@ -1,1 +1,1 @@
-from .text_chunker import TextChunker
+from .text_chunker import TextChunker, paragraphs, sentences
