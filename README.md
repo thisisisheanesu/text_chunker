@@ -4,7 +4,7 @@ TextChunker is a Python class that takes in long text as input and divides it in
 
 ## Install
 ``` sh
-pip intsll text_chunker
+pip install text_chunker
 ```
 
 ## Usage
